@@ -1,0 +1,83 @@
+label, input {
+    display: block;
+    font-family: "Inter", sans-serif;
+    color: var(--standard-text-primary-color);
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+form {
+    padding: 20px;
+    border: 1px solid var(--logo-text-primary-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-image: linear-gradient(to bottom, var(--primary-gradient-color), var(--primary-background-color));
+
+}
+
+
+input {
+    padding: 5px 10px;
+    border: 1px solid var(--logo-text-primary-color);
+    border-radius: 5px;
+    background-color: transparent;
+    outline: none;
+}
+
+
+.buttons-container {
+    margin-top: 1rem;
+}
+
+.two-fields {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a.inverted-button {
+    padding: 0 10px;
+    border: 1px solid var(--logo-text-primary-color);
+    border-radius: 10px;
+}
+
+a.inverted-button:hover {
+    background-color: var(--logo-text-primary-color);
+    transition: background-color 0.3s ease;
+}
+
+button.normal-button {
+    padding: 5px 10px;
+    border: 1px solid var(--logo-text-primary-color);
+    border-radius: 10px;
+    background-color: var(--primary-background-color);
+    cursor: pointer;
+    max-width: 100px;
+}
+
+button.normal-button:hover {
+    background-color: var(--logo-text-primary-color);
+    transition: background-color 0.3s ease;
+}
+
+.small-field {
+    max-width: 140px;
+}
+
+
+@media (min-width: 720px) {
+
+    .form-container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form {
+        width: 360px;
+    }
+
+}

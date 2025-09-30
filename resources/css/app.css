@@ -1,0 +1,105 @@
+@import url("hero.css");
+@import url("navbar.css");
+@import url("auth.css");
+@import url("profile.css");
+@import url("task.css");
+@import url("paginator-simple.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+label {
+    color: #FFF;
+}
+
+:root {
+    --primary-background-color: #121C3D;
+    --secundary-background-color: #FDFDFD;
+    --tertiary-background-color: #EFEFEF;
+    --logo-text-primary-color: #36C4F1;
+    --logo-text-secundary-color: #276CC8;
+    --standard-text-primary-color: #FFFFFF;
+    --standard-text-secundary-color: #151515;
+    --standard-text-tertiary-color: #727272;
+    --cancel-color: #FF0000;
+    --primary-gradient-color: #154079;
+    --green-color: #48CE51;
+    --blue-color: #1984FF;
+    --red-color: #FF4454;
+    --new-button-color: #00A60B;
+}
+
+body {
+    background-color: var(--primary-background-color);
+    height: 100vh;
+}
+
+body.body-is-authenticated {
+    background-color: var(--tertiary-background-color);
+}
+
+h1, h4 {
+  font-family: "Noto Sans", sans-serif;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 4rem;
+    background-image: linear-gradient( to right, var(--logo-text-primary-color), var(--logo-text-secundary-color));
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+h4 {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--standard-text-primary-color);
+}
+
+h3, h2, p, small, textarea {
+    font-family: "Inter", sans-serif;
+    color: var(--standard-text-primary-color);
+    text-align: center;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+p {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+small {
+    font-size: 0.75rem;
+}
+
+.main-container {
+    height: 100vh;
+    margin: 0 auto;
+}
+
+@media (min-width: 720px) {
+    .main-container {
+        padding: 0;
+    }
+}

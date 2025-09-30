@@ -1,0 +1,133 @@
+div.main-tasks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a.new-task-button, a.back-button {
+    align-self: flex-start;
+    background-color: var(--new-button-color);
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 24px 0;
+}
+
+a.back-button {
+    display: block;
+    max-width: 100px;
+}
+
+a.new-task-button:hover, a.back-button:hover {
+    background-color: var(--primary-background-color);
+    transition: background-color 0.3s ease;
+}
+
+a.new-task-button h4:hover, a.back-button:hover h4 {
+    color: #FFFF;
+}
+
+div.card-task-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 1rem;
+    background-color: var(--secundary-background-color);
+    border-radius: 10px;
+    width: 100%;
+
+}
+
+div.card-task-container.in_process {
+    border-top: 5px solid var(--blue-color);
+    border-left: 5px solid var(--blue-color);
+}
+
+div.card-task-container.completed {
+    border-top: 5px solid var(--green-color);
+    border-left: 5px solid var(--green-color);
+}
+
+div.card-task-container.overdue {
+    border-top: 5px solid var(--red-color);
+    border-left: 5px solid var(--red-color);
+}
+
+section.task-content p, section.task-content small{
+    color: var(--standard-text-secundary-color);
+    text-align: left;
+    overflow: hidden;
+}
+
+section.task-content p{
+    height: 30px;
+}
+
+section.task-content small{
+    display: block;
+    height: 60px;
+}
+
+section.task-content small.task-date{
+    font-weight: 600;
+    height: auto;
+    padding: 5px 0;
+}
+
+a.edit-task-button {
+    color: #000;
+    font-size: 40px;
+}
+
+
+form.task-form {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    background-image: none;
+    margin: 0 auto;
+    margin-top: 45px;
+    width: 100%;
+    gap: 1rem;
+
+}
+
+form.task-form.edit-form {
+    margin-top: 0;
+}
+
+form.task-form input, form.task-form textarea, form.task-form select {
+    color: var(--standard-text-secundary-color);
+    background-color: var(--secundary-background-color);
+    border: none;
+    border-radius: 10px;
+    text-align: left;
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+form.task-form textarea {
+    resize: none;
+    outline: none;
+    height: 443px;
+}
+
+a.cancel-button {
+    padding: 5px 10px;
+    background-color: var(--cancel-color);
+    border-radius: 10px;
+}
+
+a.cancel-button:hover {
+    background-color: var(--primary-background-color);
+    transition: background-color 0.3s ease;
+}
+
+a.cancel-button h4:hover {
+    color: #FFF;
+}
+
+input[type="date"] {
+    max-width: 180px;
+}

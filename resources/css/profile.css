@@ -1,0 +1,50 @@
+div.main-section-container {
+    margin: 0 1rem;
+}
+
+div.section-container {
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 3rem;
+    background-color: var(--secundary-background-color);
+}
+
+button.cancel-button {
+    display: block;
+    background-color: var(--cancel-color);
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+button.cancel-button:hover {
+    background-color: var(--primary-background-color);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+
+form.profile-form {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    background-image: none;
+}
+
+form.profile-form label, form.profile-form input {
+    color: var(--standard-text-secundary-color);
+}
+
+form.profile-form input {
+    border: 0.5px solid var(--standard-text-tertiary-color);
+}
+
+
+
+@media (min-width: 720px) {
+
+    div.main-section-container {
+        max-width: 920px;
+        margin: 0 auto;
+    }
+}
