@@ -22,9 +22,9 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')
-                  ->references('id') // La columna a la que hace referencia (en la tabla 'users')
-                  ->on('users')     // La tabla a la que hace referencia
-                  ->onDelete('cascade'); // Opcional: ¿Qué hacer si se borra el usuario?
+                  ->references('id') // The column being referenced (in the 'users' table)
+                  ->on('users')     // The table being referenced
+                  ->onDelete('cascade'); // Optional: What to do if the user is deleted?
 
         });
     }

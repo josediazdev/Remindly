@@ -1,105 +1,572 @@
-@import url("hero.css");
-@import url("navbar.css");
-@import url("auth.css");
-@import url("profile.css");
-@import url("task.css");
-@import url("paginator-simple.css");
+/* Modern Remindly CSS - Full Width Design */
 
+/* Futuristic Color Palette */
+:root {
+    /* Primary Colors - Deep Space Theme */
+    --primary-bg: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    --secondary-bg: linear-gradient(135deg, #1e1e3f 0%, #2a2a5a 100%);
+    --tertiary-bg: #f8f9fa;
+    
+    /* Accent Colors - Neon & Electric */
+    --neon-blue: #00d4ff;
+    --neon-purple: #8b5cf6;
+    --neon-green: #00ff88;
+    --electric-pink: #ff006e;
+    --cyber-orange: #ff8500;
+    
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #b8bcc8;
+    --text-muted: #6c757d;
+    --text-dark: #212529;
+    
+    /* Status Colors */
+    --success: #00ff88;
+    --warning: #ffb700;
+    --danger: #ff4757;
+    --info: #00d4ff;
+    
+    /* Glass Effect */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.3);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-elevated: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-}
-
-ul {
-    list-style-type: none;
-}
-
-label {
-    color: #FFF;
-}
-
-:root {
-    --primary-background-color: #121C3D;
-    --secundary-background-color: #FDFDFD;
-    --tertiary-background-color: #EFEFEF;
-    --logo-text-primary-color: #36C4F1;
-    --logo-text-secundary-color: #276CC8;
-    --standard-text-primary-color: #FFFFFF;
-    --standard-text-secundary-color: #151515;
-    --standard-text-tertiary-color: #727272;
-    --cancel-color: #FF0000;
-    --primary-gradient-color: #154079;
-    --green-color: #48CE51;
-    --blue-color: #1984FF;
-    --red-color: #FF4454;
-    --new-button-color: #00A60B;
-}
-
 body {
-    background-color: var(--primary-background-color);
-    height: 100vh;
+    font-family: 'Poppins', 'Inter', sans-serif;
+    background: var(--primary-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: none;
+}
+
+html {
+    width: 100%;
+    max-width: none;
 }
 
 body.body-is-authenticated {
-    background-color: var(--tertiary-background-color);
+    background: var(--primary-bg);
+    padding-top: 80px; /* Account for fixed navbar */
 }
 
-h1, h4 {
-  font-family: "Noto Sans", sans-serif;
+/* Main content container */
+.main-content {
+    min-height: calc(100vh - 80px);
+    padding-top: 0;
+    width: 100%;
+    max-width: none;
 }
 
-h1 {
+/* For guest users (welcome page) */
+body:not(.body-is-authenticated) .main-content {
+    padding-top: 80px;
+}
+
+/* Ensure full width containers */
+.container-fluid {
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Navigation full width */
+.navbar {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.navbar .container-fluid {
+    max-width: none !important;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 4rem;
-    background-image: linear-gradient( to right, var(--logo-text-primary-color), var(--logo-text-secundary-color));
+    margin-bottom: 1rem;
+}
+
+/* Ensure text visibility */
+.text-light {
+    color: var(--text-primary) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Hero section specific styles */
+.hero-section {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: none;
+}
+
+.hero-section .container {
+    max-width: none !important;
+    width: 100%;
+}
+
+.hero-section .text-light {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section .text-secondary {
+    color: #e2e8f0 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Features section full width */
+.features-section {
+    width: 100%;
+    max-width: none;
+}
+
+.features-section .container {
+    max-width: none !important;
+    width: 100%;
+}
+
+.logo-text {
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     background-clip: text;
-    color: transparent;
-    display: inline-block;
-}
-
-h4 {
-    font-weight: 500;
-    font-size: 1.2rem;
-    color: var(--standard-text-primary-color);
-}
-
-h3, h2, p, small, textarea {
-    font-family: "Inter", sans-serif;
-    color: var(--standard-text-primary-color);
-    text-align: center;
-}
-
-h2 {
-    font-weight: 400;
-    font-size: 3rem;
-}
-
-h3 {
-    font-weight: 400;
-    font-size: 2rem;
-}
-
-p {
-    font-weight: 400;
+    font-weight: 700;
     font-size: 1.5rem;
 }
 
-small {
-    font-size: 0.75rem;
+/* Navigation Styles */
+.futuristic-nav {
+    background: rgba(15, 15, 35, 0.95) !important;
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
 }
 
-.main-container {
-    height: 100vh;
-    margin: 0 auto;
+.futuristic-nav .navbar-brand:hover .logo-text {
+    text-shadow: 0 0 10px var(--neon-blue);
 }
 
-@media (min-width: 720px) {
-    .main-container {
-        padding: 0;
+.futuristic-nav .nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.futuristic-nav .nav-link:hover,
+.futuristic-nav .nav-link.active {
+    color: var(--neon-blue) !important;
+    text-shadow: 0 0 8px var(--neon-blue);
+}
+
+.futuristic-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+    border-radius: 2px;
+}
+
+/* Main Content */
+.main-content {
+    min-height: calc(100vh - 76px);
+    padding: 2rem 0;
+}
+
+/* Button Styles */
+.btn-primary {
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+    border: none;
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+    background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+}
+
+.btn-outline-light {
+    border: 2px solid var(--glass-border);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background: var(--glass-bg);
+    border-color: var(--neon-blue);
+    color: var(--neon-blue) !important;
+    box-shadow: var(--shadow-glow);
+}
+
+/* Card Styles */
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-elevated);
+    border-color: var(--neon-blue);
+}
+
+/* Form Styles */
+.form-control {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    color: var(--text-primary);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background: var(--glass-bg);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 0 0.2rem rgba(0, 212, 255, 0.25);
+    color: var(--text-primary);
+}
+
+.form-control::placeholder {
+    color: var(--text-muted);
+}
+
+.form-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+.slide-up {
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(30px);
     }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glow Effects */
+.glow-on-hover {
+    transition: all 0.3s ease;
+}
+
+.glow-on-hover:hover {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem 0;
+    }
+    
+    .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    body.body-is-authenticated {
+        padding-top: 70px;
+    }
+    
+    body:not(.body-is-authenticated) .main-content {
+        padding-top: 70px;
+    }
+    
+    .hero-section {
+        padding: 2rem 0;
+    }
+    
+    .display-2 {
+        font-size: 2.5rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    /* Fix mobile container alignment */
+    .container.py-5 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .container.py-5 .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    .container.py-5 .col-lg-8,
+    .container.py-5 .col-md-10,
+    .col-12 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* General column centering for tablets */
+    [class*="col-"] {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    /* Task dashboard specific centering */
+    .container-fluid.py-4 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    .container-fluid.py-4 .col-12,
+    .container-fluid.py-4 .col-md-3,
+    .container-fluid.py-4 .col-lg-4,
+    .container-fluid.py-4 .col-md-6 {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+        margin-bottom: 15px;
+    }
+    
+    /* Center task cards and stats cards */
+    .stats-card,
+    .task-card {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 100% !important;
+    }
+    
+    /* Center task dashboard header on tablets */
+    .d-flex.justify-content-between {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 20px;
+    }
+    
+    .d-flex.justify-content-between > div:first-child {
+        text-align: center !important;
+    }
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .container.py-5 {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+    .container.py-5 .col-lg-8,
+    .container.py-5 .col-md-10,
+    .col-12 {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* Ensure cards and forms are centered */
+    .card {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .row.justify-content-center {
+        justify-content: center !important;
+        text-align: center;
+    }
+    
+    /* General column centering for mobile */
+    [class*="col-"] {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+    /* Task dashboard specific centering for small mobile */
+    .container-fluid.py-4 {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+    .container-fluid.py-4 .col-12,
+    .container-fluid.py-4 .col-md-3,
+    .container-fluid.py-4 .col-lg-4,
+    .container-fluid.py-4 .col-md-6 {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        margin-bottom: 10px;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Force single column layout for tasks on small screens */
+    .container-fluid.py-4 .col-lg-4,
+    .container-fluid.py-4 .col-md-6,
+    .container-fluid.py-4 .col-md-3 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Center task cards and stats cards on small mobile */
+    .stats-card,
+    .task-card {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 95% !important;
+    }
+    
+    /* Center task dashboard header on mobile */
+    .d-flex.justify-content-between {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 15px;
+    }
+    
+    .d-flex.justify-content-between > div:first-child {
+        text-align: center !important;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+}
+
+/* Text Contrast Improvements */
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.lead {
+    color: #e2e8f0 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Features section text visibility */
+.features-section .text-light,
+.features-section h1,
+.features-section h2,
+.features-section h3,
+.features-section h4,
+.features-section h5,
+.features-section h6 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.features-section .card-title {
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar positioning fix */
+.navbar.fixed-top {
+    z-index: 1030;
+}
+
+/* Override any max-width limitations for layout containers */
+body, html, main, .main-content {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* Specific overrides for Bootstrap containers */
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl {
+    max-width: none !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Ensure sections use full width */
+section {
+    width: 100%;
+    max-width: none;
+}
+
+/* Row and column overrides */
+.row {
+    width: 100%;
+    max-width: none;
 }

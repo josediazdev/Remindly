@@ -19,23 +19,40 @@ Each task includes:
 - **Title**: Clear, concise task name
 - **Description**: Detailed information about the task
 - **Due Date**: When the task needs to be completed
-- **Status**: Track progress (in-process/completed)
 - **Completion Date**: Automatic timestamp when marked complete
 
 ## 🛠️ Tech Stack
 
 - **Backend**: Laravel 12 (PHP 8.2+)
-- **Frontend**: Blade templates with CSS
+- **Frontend**: Blade templates with Bootstrap CSS + custom styling
 - **Database**: SQLite (default) or MySQL/PostgreSQL
 - **Build Tools**: Vite, Laravel Vite Plugin
-- **Icons**: Bootstrap Icons
+- **Icons**: Bootstrap Icons (CDN)
 - **Authentication**: Laravel Breeze (built-in)
+- **CSS Framework**: Bootstrap 5.3.2 (CDN) + custom CSS overrides
+
+## 🎨 UI Components
+
+### Bootstrap Icons
+The application uses **Bootstrap Icons** for a consistent and modern icon set:
+- **Calendar icons** for due dates
+- **Edit icons** for task modification
+- **Plus icons** for creating new tasks
+- **File icons** for task management
+- Icons are loaded via CDN for optimal performance
+- All icons are semantic and accessible
+
+### Styling Architecture
+- **Bootstrap 5.3.2**: Base CSS framework loaded via CDN
+- **Custom CSS Overrides**: Modern design system with futuristic color palette
+- **CSS Variables**: Consistent theming with CSS custom properties
+- **Glass Effects**: Modern glassmorphism design elements
+- **Responsive Design**: Bootstrap's responsive grid + custom breakpoints
+- **Modern UI**: Neon accents and space-themed interface over Bootstrap base
 
 ## 📋 Prerequisites
 
 Before you begin, ensure you have the following installed:
-
-- PHP 8.2 or higher
 - Composer (PHP dependency manager)
 - Node.js and npm (for frontend assets)
 - Git
